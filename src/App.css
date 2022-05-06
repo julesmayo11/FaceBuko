@@ -1,38 +1,255 @@
-.App {
-  text-align: center;
+
+
+*, *::after,*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+ 
+label, input { 
+  width: 100%;
+  padding:10px;
+}
+input {
+  margin: 10px;
+  font-size: 14px;
+}
+input[type='submit'] {
+  padding:15px;
+  background-color: #C5DCA0;
+  color:#222;
+  cursor: pointer;
+  width:90%; 
+  border:none;
+  border-radius: 5px;
+  margin-top: 40px;
+  font-size: 16px ;
+  font-weight: bold;
+}
+input[type='submit']:hover {
+  background-color: #222;
+  color:#ddd; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wallpaper {
   min-height: 100vh;
+  background-color: #818AA3;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center; 
+}
+
+
+
+.main-container {
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 80%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  padding:40px 50px 0px 50px ;
+  color:white;
+  background-image: url(images/3.png);
+  background-size: 150%;
+  border-left: 7.5px solid;
+  border-right: 7.5px solid;
+  border-color: white;
+}
+
+.blank {
+  /* background-color: #333; */
+  width:100%;
+  min-height: 100px;
+}
+
+form {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px 20px ;
+  color: black;
+}
+
+.input-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.login {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  transform: translateY(200px);
+  border-radius: 20px;
+  border: 1px solid;
+  border-color:black;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login  input[type='submit'] { 
+  background-color: #818AA3;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.login  input[type='submit']:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+
+@media (min-width: 768px) {
+  .login  input[type='submit'] {
+    padding: 0 2.6rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-150px);
+  align-items: center;
+  margin-left: 50px;
+  border-radius: 20px;
+} 
+
+.signup  input[type='submit'] { 
+  border: 20px;
+}
+
+.header {
+  position:fixed;  
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  user-select: none;
+  margin: 20px;
+}
+
+.bottom {
+  align-self: end;
+}
+
+.switch {
+  position: fixed;
+  padding: 20px;
+  background-color: #cc7000;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 15%;
+  text-align: center;
+  font-size: 16px;
+  margin:40px 50px 0px 50px ;
+}
+.s-login {
+  bottom:10%;
+  right: 10%;
+  /*background-color: #cc7000;*/
+}
+.s-signup {
+  top:10%;
+  left: 10%;
+  /*background-color: #FFB52E;*/
+}
+.switch:hover {
+  color: #fff; 
+  filter: brightness(75%);
+}
+.error {
+  padding: 10px;
+  color:rgb(255, 140, 140);
+  font-weight: 600;
+  animation: errorAnim 0.5s; 
+}
+.error-input {
+  background-color: rgb(255, 203, 203);
+}
+
+.authedt {
+  background-image: url('images/bg-2.png');
+  background-size: 110%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+.backBtn{
+  background-color: red;
+}
+.logout {
+  padding:20px;
+  width: 50%;
+  background-color: #333;
+  color:#fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  margin: 20px;
+  font-size: 16px;
+}
+
+.logout:hover {
+  background-color: rgb(248, 125, 146); 
+  border: 0.5px solid;
+  border-color: black;
+}
+
+@keyframes errorAnim { 
+  25% {
+    transform: scale(1.01);
   }
+  50% {
+    transform: scale(1.3);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+}
+.buko{
+  height: 15%;
+  width: 15%;
+}
+
+.autho-container{
+  background-color: pink;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100vh;
+  border-radius: 20px;
+  border:3px solid;
+  border-color:black;
+}
+
+.hello{
+  font-size: 125%;
 }
